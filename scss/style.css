@@ -1,0 +1,306 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 2000px;
+}
+
+.header .nav {
+  background-color: #e5e5e5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 999;
+}
+.header .nav .nav-list {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.header .nav .nav-list .nav-item {
+  margin-left: 20px;
+  margin-right: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  list-style: none;
+}
+.header .nav .nav-list .nav-item a {
+  color: #C39797;
+  text-decoration: none;
+  position: relative;
+}
+.header .nav .nav-list .nav-item a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 4px;
+  background-color: #4e3c3c;
+  position: absolute;
+  transition: 0.4s ease-in-out;
+}
+.header .nav .nav-list .nav-item a:hover {
+  color: #4e3c3c;
+}
+.header .nav .nav-list .nav-item a:hover::after {
+  width: 100%;
+}
+.header .nav .nav-button {
+  display: block;
+  padding: 7px;
+  margin-right: 10px;
+  color: #C39797;
+  background-color: white;
+  outline: none;
+  box-shadow: 0 6px 0 #C39797;
+  border: 3px solid #C39797;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  text-decoration: none;
+  font-family: "Nunito Sans", sans-serif;
+}
+.header .nav .nav-button:active {
+  color: white;
+  background-color: #C39797;
+  margin-top: 6px;
+  box-shadow: 0 3px 0 #C39797;
+}
+.header .nav .hamburger {
+  z-index: 10;
+}
+.header .nav .hamburger input {
+  width: 48px;
+  height: 40px;
+}
+.header .nav .hamburger div {
+  width: 100%;
+  height: 3px;
+  background-color: #C39797;
+}
+
+.hero {
+  background-image: url("img/Adelina-cake-shop.png");
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  z-index: -3;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.hero .hero-text {
+  width: 50%;
+  text-align: center;
+  color: #4e3c3c;
+}
+.hero .hero-text h4 {
+  font-family: "Lobster", cursive;
+  font-size: 36px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.hero .hero-text p {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 18px;
+}
+.hero .cake {
+  animation: floatingCake 2s infinite alternate;
+  display: none;
+}
+@keyframes floatingCake {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(40px);
+  }
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100vh;
+  background-color: #383838;
+}
+.main .first-main {
+  color: #eaeaea;
+  font-family: "Nunito Sans", sans-serif;
+  width: 50%;
+  padding: 20px;
+  text-align: center;
+}
+.main .first-main .first-main-title {
+  font-size: 36px;
+  font-family: "Lobster", cursive;
+  margin-bottom: 48px;
+}
+.main .second-main {
+  color: #eaeaea;
+  font-family: "Nunito Sans", sans-serif;
+  width: 50%;
+  padding: 20px;
+  text-align: center;
+}
+.main .second-main .second-main-title {
+  font-size: 36px;
+  font-family: "Lobster", cursive;
+  margin-bottom: 48px;
+}
+
+.menu {
+  padding-top: 6rem;
+}
+.menu .menu-title {
+  font-size: 60px;
+  font-family: "Lobster", cursive;
+  text-align: center;
+  padding: 20px 0 20px 0;
+}
+.menu .menu-list {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 30px 30px;
+}
+.menu .menu-list .card {
+  border: 3px solid #C39797;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 300px;
+}
+.menu .menu-list .card .card-body {
+  text-align: center;
+}
+.menu .menu-list .card .card-body .card-name {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: "Lobster", cursive;
+  font-size: 24px;
+  font-weight: bold;
+}
+.menu .menu-list .card .card-body .card-desc {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 15px;
+}
+.menu .menu-list .card .card-button {
+  padding: 25px;
+}
+.menu .menu-list .card .card-button button {
+  display: block;
+  padding: 7px;
+  margin-right: 10px;
+  color: #C39797;
+  background-color: white;
+  outline: none;
+  box-shadow: 0 6px 0 #C39797;
+  border: 3px solid #C39797;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  width: 100%;
+}
+.menu .menu-list .card .card-button button:active {
+  color: white;
+  background-color: #C39797;
+  margin-top: 6px;
+  box-shadow: 0 3px 0 #C39797;
+}
+
+.contact {
+  color: #eaeaea;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background: #383838;
+}
+.contact h1 {
+  font-family: "Lobster", cursive;
+  font-size: 60px;
+  text-align: center;
+}
+.contact .contact-info {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 3rem;
+}
+.contact .contact-info .contact-acc {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.contact .contact-info .contact-acc .contact-phone h4 {
+  font-family: "Lobster", cursive;
+  font-size: 24px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.contact .contact-info .contact-acc .contact-phone p {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 18px;
+}
+.contact .contact-info .contact-acc .contact-email h4 {
+  font-family: "Lobster", cursive;
+  font-size: 24px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.contact .contact-info .contact-acc .contact-email p {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 18px;
+}
+
+footer .footer-body {
+  padding: 10px;
+  color: #eaeaea;
+  background-color: #1f1f1f;
+  text-align: center;
+  font-size: 18px;
+}
+
+@media screen and (min-width: 992px) {
+  .nav-list .nav-item {
+    font-size: 24px;
+    margin-left: 20px;
+  }
+  .hero .cake {
+    display: block;
+  }
+  .contact-phone h4 {
+    font-family: "Lobster", cursive;
+    font-size: 36px;
+    text-align: center;
+  }
+  .contact-phone p {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 24px;
+  }
+  .contact-email h4 {
+    font-family: "Lobster", cursive;
+    font-size: 36px;
+    text-align: center;
+  }
+  .contact-email p {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 24px;
+  }
+}/*# sourceMappingURL=style.css.map */

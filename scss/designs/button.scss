@@ -1,0 +1,33 @@
+$navbar-text-color: #C39797;
+$navbar-text-color-sub: #886969;
+$navbar-text-color-hovered: #4e3c3c;
+
+@mixin intButton {
+   display: block;
+   
+   padding: 7px;
+   margin-right: 10px;
+         
+   color: $navbar-text-color;
+   background-color: white;
+
+   outline: none;
+
+   box-shadow: 0 6px 0 $navbar-text-color;
+
+   border: 3px solid $navbar-text-color;
+   border-radius: 20px;
+
+   cursor: pointer;
+
+   transition: .2s ease-in-out;
+
+   &:active {
+      color: white;
+      background-color: $navbar-text-color;
+
+      margin-top: 6px;
+
+      box-shadow: 0 3px 0 $navbar-text-color;
+   }
+}

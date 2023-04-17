@@ -1,0 +1,396 @@
+// Loaders
+@use 'designs/button' as button;
+@use 'properties/flex' as flex;
+
+// Fonts
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap');
+
+// Variables
+
+$poppins: 'Poppins', sans-serif;
+$lobster: 'Lobster', cursive;
+$nunito: 'Nunito Sans', sans-serif;
+
+$navbar-text-color: #C39797;
+$navbar-text-color-sub: #886969;
+$navbar-text-color-hovered: #4e3c3c;
+$navbar-background: #e5e5e5;
+
+$main-color-text: #eaeaea;
+$main-background: #383838;
+
+* {
+   margin: 0;
+   padding: 0;
+
+   box-sizing: border-box;
+}
+
+body {
+   height: 2000px;
+
+}
+
+.header {
+   .nav {
+      background-color: $navbar-background;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      z-index: 999;
+
+      .nav-list {
+         @include flex.center;
+
+         .nav-item {
+            margin-left: 20px;
+            margin-right: 20px;
+
+            font-family: $poppins;
+            font-weight: 300;
+
+            list-style: none;
+
+            a {
+               color: $navbar-text-color;
+
+               text-decoration: none;
+
+               position: relative;
+            }
+
+            a::after {
+               content: '';
+
+               display: block;
+               width: 0;
+               height: 4px;
+
+               background-color: $navbar-text-color-hovered;
+
+               position: absolute;
+
+               transition: .4s ease-in-out;
+            }
+
+            a:hover {
+               color: $navbar-text-color-hovered;
+            }
+
+            a:hover::after {
+               width: 100%;
+            } 
+         }
+      }
+      .nav-button {
+         @include button.intButton;
+
+         text-decoration: none;
+
+         font-family: $nunito;
+      }
+
+      .hamburger {
+         z-index: 10;
+
+         input {
+            width: 48px;
+            height: 40px;
+         }
+
+         div {
+            width: 100%;
+
+            height: 3px;
+            background-color: #C39797;
+
+         }
+      }
+   }
+}
+
+.hero {
+   background-image: url("img/Adelina-cake-shop.png");
+
+   height: 100vh;
+   width: 100%;
+
+   position: relative;
+
+   z-index: -3;
+
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+
+   .hero-text {
+      width: 50%;
+      text-align: center;
+
+      color: $navbar-text-color-hovered;
+
+      h4 {
+         font-family: $lobster;
+         font-size: 36px;
+         padding-top: 10px;
+         padding-bottom: 10px;
+      }
+
+      p {
+         font-family: $nunito;
+         font-size: 18px;
+      }
+   }
+
+   .cake {
+      animation: floatingCake 2s infinite alternate;
+
+      display: none;
+   }
+
+   @keyframes floatingCake {
+      from {
+         transform: translateY(0);
+      }
+
+      to {
+         transform: translateY(40px);
+      }
+   }
+}
+
+.main {
+   display: flex;
+   // flex-direction: row;
+   align-items: center;
+   justify-content: space-around;
+
+   height: 100vh;
+
+   background-color: $main-background;
+
+   .first-main {
+      color: $main-color-text;
+      font-family: $nunito;
+
+      width: 50%;
+      padding: 20px;
+
+      text-align: center;
+
+      .first-main-title {
+         font-size: 36px;
+         font-family: $lobster;
+
+         margin-bottom: 48px;
+      }
+   }
+
+   .second-main {
+      color: $main-color-text;
+      font-family: $nunito;
+      
+      width: 50%;
+      padding: 20px;
+
+      text-align: center;
+
+      .second-main-title {
+         font-size: 36px;
+         font-family: $lobster;
+
+         margin-bottom: 48px;
+      }
+   }
+}
+
+.menu {
+   padding-top: 6rem;
+
+   .menu-title {
+      font-size: 60px;
+      font-family: $lobster;
+      
+      text-align: center;
+      padding: 20px 0 20px 0;
+   }
+
+   .menu-list {
+      @include flex.center;
+      @include flex.g-1;
+      flex-wrap: wrap;
+
+
+      padding: 30px 30px;
+
+      .card {
+         border: 3px solid $navbar-text-color;
+         border-radius: 20px;
+         overflow: hidden;
+         width: 300px;
+
+         .card-body {
+            text-align: center;
+
+            
+            .card-name {
+               padding-top: 10px;
+               padding-bottom: 10px;
+
+               font-family: $lobster;
+               font-size: 24px;
+               font-weight: bold;
+            }
+
+            .card-desc {
+               font-family: $nunito;
+               font-size: 15px;
+            }
+         }
+
+         .card-button {
+            padding: 25px;
+
+            button {    
+            @include button.intButton;
+
+            width: 100%;
+            }
+         }
+      }
+   }
+}
+
+.contact {
+   color: $main-color-text;
+
+   padding-top: 3rem;
+   padding-bottom: 3rem;
+
+   background: $main-background;
+
+   h1 {
+      font-family: $lobster;
+      font-size: 60px;
+
+      text-align: center;
+   }
+
+   .contact-info {
+      @include flex.space-around;
+
+      padding-top: 3rem;
+
+      .contact-acc {
+         @include flex.space-between;
+         flex-direction: column;
+         
+
+         .contact-phone {
+            
+            h4 {
+               font-family: $lobster;
+               font-size: 24px;
+
+               margin-top: 10px;
+               margin-bottom: 10px;
+
+               text-align: center;
+            }
+
+            p {
+               font-family: $nunito;
+               font-size: 18px;
+            }
+         }
+
+         .contact-email {
+            h4 {
+               font-family: $lobster;
+               font-size: 24px;
+
+               margin-top: 10px;
+               margin-bottom: 10px;
+
+               text-align: center;
+            }
+
+            p {
+               font-family: $nunito;
+               font-size: 18px;
+            }
+         }
+      }
+   }
+}
+
+footer {
+
+   .footer-body {
+      padding: 10px;
+
+      color: $main-color-text;
+      background-color: darken($color: $main-background, $amount: 10);
+
+      text-align: center;
+
+      font-size: 18px;
+   }
+}
+
+@media screen and (min-width: 992px) {
+   .nav-list  {
+      .nav-item {
+         font-size: 24px;
+   
+         margin-left: 20px;
+      }  
+   }
+
+
+   .hero {
+      .cake {
+         display: block;
+      }
+   }
+
+   .contact-phone {
+            
+      h4 {
+         font-family: $lobster;
+         font-size: 36px;
+
+         text-align: center;
+      }
+
+      p {
+         font-family: $nunito;
+         font-size: 24px;
+      }
+   }
+
+   .contact-email {
+      h4 {
+         font-family: $lobster;
+         font-size: 36px;
+
+         text-align: center;
+      }
+
+      p {
+         font-family: $nunito;
+         font-size: 24px;
+      }
+   }
+}

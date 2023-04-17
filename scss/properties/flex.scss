@@ -1,0 +1,31 @@
+@mixin center {
+   display: flex;
+   flex-wrap: nowrap;
+   justify-content: center;
+   align-items: center;
+}
+
+@mixin space-between {
+   display: flex;
+   flex-wrap: nowrap;
+   justify-content: space-between;
+   align-items: center;
+}
+
+@mixin space-around {
+   display: flex;
+   flex-wrap: nowrap;
+   justify-content: space-around;
+   align-items: center;
+}
+
+@mixin space-evenly {
+   display: flex;
+   flex-wrap: nowrap;
+   justify-content: space-evenly;
+   align-items: center;
+}
+
+@mixin g-1 {
+   gap: 10px;
+}
